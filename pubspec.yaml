@@ -1,0 +1,13 @@
+name: dart_string_calculator
+description: "A simple string calculator in Dart."
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+
+dev_dependencies:
+  test:
+
