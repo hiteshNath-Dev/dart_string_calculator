@@ -21,4 +21,8 @@ void main() {
   test('Numbers separated by newline delimeter', () {
     expect(add('1\n2,3'), equals(6));
   });
+
+  test('Numbers separated by custom delimeter', () {
+    expect(add('//;\n1;2'), equals(3));
+  });
 }
