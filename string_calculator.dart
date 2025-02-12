@@ -2,6 +2,7 @@
 int add(String numbers) {
   if (numbers.isEmpty) return 0;
 
+  numbers = numbers.replaceAll("\n", ",");
   return numbers.split(",").map(int.parse).fold(
         0,
         (previousValue, nextValue) => previousValue + nextValue,
