@@ -2,9 +2,19 @@
 int add(String numbers) {
   if (numbers.isEmpty) return 0;
 
-  RegExp delimeters = RegExp(r'[\n,]');
+  String delimeters = '';
 
-  return numbers.split(delimeters).map(int.parse).fold(
+  if (numbers.startsWith("//")) {
+    delimeters = r'[,]';
+
+    var parts = numbers.substring(2).split("\n");
+    delimeters = RegExp.escape(parts[0]);
+    numbers = parts[1];
+  } else {
+    delimeters = r'[\n,]';
+  }
+
+  return numbers.split(RegExp(delimeters)).map(int.parse).fold(
         0,
         (previousValue, nextValue) => previousValue + nextValue,
       );
